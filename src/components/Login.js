@@ -35,7 +35,8 @@ const LoginForm = (setIsAuthenticated) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if(formData.email && formData.password){
-            history('/list');
+             localStorage.setItem('email', formData.email);
+            history('/private/list');
         }
         // Reset form after submission
         // setFormData({

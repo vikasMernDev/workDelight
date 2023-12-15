@@ -69,13 +69,13 @@ const UserList = () => {
     return (
         <div className='container'>
             <div className='createButton'>
-                <NavLink to="/create-user" className="navLinkButton">
+                <NavLink to="/private/create-user" className="navLinkButton">
                     <Button variant="contained" color="primary">
                         Create User
                     </Button>
                 </NavLink>
                 <NavLink to="/" className="navLinkButton">
-                    <Button variant="contained" color="primary">
+                    <Button variant="contained" color="primary" onClick={()=>localStorage.setItem('email','')}>
                         Logout
                     </Button>
                 </NavLink>
@@ -100,7 +100,7 @@ const UserList = () => {
                                 <td>{row.firstName}</td>
                                 <td>{row.lastName}</td>
                                 <td>
-                                    <NavLink to={`/edit-user/${row.id}`} className="navLinkButton"  style={{marginRight:'10px'}}>
+                                    <NavLink to={`/private/edit-user/${row.id}`} className="navLinkButton"  style={{marginRight:'10px'}}>
                                         <Button variant="contained" color="primary">
                                             Edit
                                         </Button>
